@@ -80,12 +80,14 @@ WSGI_APPLICATION = 'art_inventory_proj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+DB_PASSWORD = "password"
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.environ.get('DEFAULT_WEB_DB', 'art_inventory'),
         'USER': os.environ.get('DEFAULT_WEB_USER', 'vivek'),
-        'PASSWORD': os.environ.get('DEFAULT_WEB_PASSWORD', '800Lbgorilla'),
+        'PASSWORD': os.environ.get('DEFAULT_WEB_PASSWORD', DB_PASSWORD),
         'HOST': os.environ.get('DEFAULT_WEB_SERVER', 'localhost'),
         'PORT': os.environ.get('DEFAULT_WEB_PORT', '3306'),
         'OPTIONS': {
